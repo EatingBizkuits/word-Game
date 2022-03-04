@@ -78,6 +78,7 @@ With the progress of the event nearing, we have been making improvements 👍 an
 
 
 <div id="built-with"></div>
+
 ### Built With
 
 * [HTML5](https://developer.mozilla.org/en-US/docs/Glossary/HTML5)
@@ -147,12 +148,12 @@ When an item is checkmarked, it means that the function is working, however ther
 <br>
 - [Interface](https://github.com/EatingBizkuits/word-Game) <br>
     <ul>&#9744; Round Selection (Rounds 1 - 5)<br>
-    &#9744; Clicking of Boxes on Screen to mark called word<br>
+    &#9745; Clicking of Boxes on Screen to mark called word<br>
     &#9744; Display of Final Points and Boxes<br></ul>
 <br>
 - [Function](https://github.com/EatingBizkuits/word-Game)<br>
     <ul>&#9744; Creation of click confirmation<br>
-    &#9744; Revealing of outer layer of Bingo Sheet<br>
+    &#9745; Revealing of outer layer of Bingo Sheet<br>
     &#9744; Randomizing of Words within inner sector<br>
     &#9744; Randomizing of words within outer sector<br>
     &#9744; Score Calculations at the end<br>
