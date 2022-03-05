@@ -60,7 +60,7 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## **About The Project**
 
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 <br>
@@ -77,9 +77,8 @@ With the progress of the event nearing, we have been making improvements 👍 an
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
-<div id="built-with"></div>
 
-### Built With
+### **Built With**
 
 * [HTML5](https://developer.mozilla.org/en-US/docs/Glossary/HTML5)
 * [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS)
@@ -137,31 +136,39 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 <div id="progress"></div>
 
-## Roadmap & Progress
+## **Roadmap & Progress**
 <div id="checkmark-meaning"></div>
-### - What does a checkmark mean? -
+
+### *- What does a checkmark mean? -*
 
 When an item is checkmarked, it means that the function is working, however there may be bugs presents in the overall application that might require debugging. You can support us by testing our features out!
 
 <!-- &#9745; <use for "checked"> -->
 
 <br>
-- [Interface](https://github.com/EatingBizkuits/word-Game) <br>
+<h3><b>Interface 🖥️</b></h3>
     <ul>&#9744; Round Selection (Rounds 1 - 5)<br>
     &#9745; Clicking of Boxes on Screen to mark called word<br>
     &#9744; Display of Final Points and Boxes<br></ul>
 <br>
-- [Function](https://github.com/EatingBizkuits/word-Game)<br>
+
+<h3><b>Function ⚙️</b></h3>
     <ul>&#9744; Creation of click confirmation<br>
-    &#9745; Revealing of outer layer of Bingo Sheet<br>
-    &#9744; Randomizing of Words within inner sector<br>
-    &#9744; Randomizing of words within outer sector<br>
+    &#9745; Revealing of outer layer of Bingo Sheet - <b>BUGGED</b> <br>
+    &#9745; Randomizing of Words within inner sector<br>
+    &#9745; Randomizing of words within outer sector<br>
     &#9744; Score Calculations at the end<br>
     &#9744; Drawing of a line when a "Bingo" is met within inner sector (optional)<br>
     &#9744; Drawing of a line when a "Bingo" is met within outer sector (optional)<br></ul>
 <br>
-- [Miscellaneous](https://github.com/EatingBizkuits/word-Game)<br>
+
+<h3><b>Miscellaneous 📦</b></h3>
     <ul>&#9744; Baking new Bizkuits<br></ul>
+<br>  
+
+<h3><b>Bugs 🪲</b></h3>
+    <ul>&#9744; As long as 16 grids are checked, no matter inner or outer, outer does not disappear<br></ul>
+<br>
 
 See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
 
@@ -169,7 +176,7 @@ See the [open issues](https://github.com/github_username/repo_name/issues) for a
 
 
 <!-- CONTRIBUTING -->
-## Contributing
+## **Contributing**
 
 Contributions are what make the open source community such an amazing place to learn 🎓, inspire 💡, and create 🔧. Any contributions you make are ✨**greatly appreciated**✨!
 
@@ -190,7 +197,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- no license yet -->
 
 <!-- CONTACT -->
-## Contact
+## **Contact**
 
 ChaoHao - wongchaohao@gmail.com
 
@@ -201,7 +208,7 @@ Project Link: [https://github.com/EatingBizkuits/word-Game](https://github.com/E
 
 
 <!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
+## **Acknowledgments**
 
 * [Isabel Lee](https://www.linkedin.com/in/isabel-lee-38ba232a/), for supporting <b>ORION</b> for the past 7 years.
 * [Annettejoy Yeo](), for building and brainstorming the concepts and processes of the game.

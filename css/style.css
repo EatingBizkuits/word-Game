@@ -67,17 +67,52 @@
 }
 
 .gridbox {
+    display: flex;
     width: 12.8vh;
     height: 12.8vh;
     background-color: yellow;
     margin: 0.25vh;
     border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7vh;
 }
 
 .gridbox.outer {
     background-color: orange;
+    opacity: 0;
+}
+
+.gridbox.animated.outer {
+    animation: fade-out 2.5s;
+}
+
+.gridbox.outed, .gridbox.animated {
+    animation: fade-in 2s;
 }
 
 .clicked {
     background-color: green;
+}
+
+/* animations */
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
