@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, max-scale=1.0">
     <title>Word Game! | Amazing Race 2022</title>
     <link rel="stylesheet" href="./css/style.css" type="text/css">
     <script rel="stylesheet" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -17,9 +17,6 @@
                     <div class='bar underline'></div>
                 </li>
                 <li id="scores">Scoring
-                    <div class='bar underline'></div>
-                </li>
-                <li id="scoreBoard">Save ScoreBoard
                     <div class='bar underline'></div>
                 </li>
                 <li id="clear">Clear Outer Selection
@@ -78,6 +75,20 @@
             </div>
         </div>
         <div class="borderbox"></div>
+        <div class="bar scoreboard">
+            <div class="score-container">
+                <h1 class="score-text">~ Score ~</h1>
+                <div class="score-line"></div>
+                <div class="score">Cleared Tiles: <span class="score-clicked">0</span></div>
+                <div class="score">Bingo'd Rows: <span class="score-bingo">0</span></div>
+                <div class="score leave">Back to Game</div>
+            </div>
+        </div>
+        <div class="start-container bar">
+            <div class="start-menu">
+                <h2 class="start-text">Welcome to <span>WORDGAME!</span></h2>
+            </div>
+        </div>
     </div>
 </body>
 <script rel="stylesheet" type="text/javascript" src="./scripts/script.js"></script>

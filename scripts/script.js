@@ -44,11 +44,29 @@ $(document).ready(function() {
     
     $(document).on("click", ".options li", function() {
         let choice = $(this).attr('id');
-        
-        if (choice === "clear") {
-            $(".outer").removeClass("clicked")
+        if (choice === "clear") {  // clear outer clicked status
+            $(".outer").removeClass("clicked");
+            $(".outed").removeClass("clicked");
+        } else if (choice === "newGame") {
+            $(".scoreboard").addClass("bar");
+            location.reload();
+        } else if (choice === "scores") {
+            let clearedAmt = $(".clicked").length
+            $(".score-clicked").empty().append(clearedAmt);
+            $(".scoreboard").removeClass("bar").removeClass("fade-out");
+            $(".score-container").addClass("down-anim");
         }
+
     });
+
+    $(document).on("click", ".score.leave", function(){
+        $(".scoreboard").addClass("fade-out");
+        $(".score-container").removeClass("down-anim");
+        window.setTimeout(function(){
+            $(".scoreboard").addClass("bar")
+        }, 800)
+    });
+
 });
 
 

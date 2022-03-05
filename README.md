@@ -149,7 +149,7 @@ When an item is checkmarked, it means that the function is working, however ther
 <h3><b>Interface 🖥️</b></h3>
     <ul>&#9744; Round Selection (Rounds 1 - 5)<br>
     &#9745; Clicking of Boxes on Screen to mark called word<br>
-    &#9744; Display of Final Points and Boxes<br></ul>
+    &#9745; Display of Final Points and Boxes | Partial Completion<br></ul>
 <br>
 
 <h3><b>Function ⚙️</b></h3>
@@ -157,7 +157,7 @@ When an item is checkmarked, it means that the function is working, however ther
     &#9745; Revealing of outer layer of Bingo Sheet - <b>BUGGED</b> <br>
     &#9745; Randomizing of Words within inner sector<br>
     &#9745; Randomizing of words within outer sector<br>
-    &#9744; Score Calculations at the end<br>
+    &#9745; Score Calculations at the end<br>
     &#9744; Drawing of a line when a "Bingo" is met within inner sector (optional)<br>
     &#9744; Drawing of a line when a "Bingo" is met within outer sector (optional)<br>
     &#9745; Border Box Expanding when surrounding is revealed<br></ul>
@@ -171,7 +171,7 @@ When an item is checkmarked, it means that the function is working, however ther
     <ul>&#9745; As long as 16 grids are checked, no matter inner or outer, outer does not disappear<br></ul>
 <br>
 
-See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/EatingBizkuits/word-Game/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -187,15 +187,13 @@ Don't forget to give the project a star! ⭐ and have a Bizkuit🍪.
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
-
 <!-- LICENSE -->
-<!-- ## License
+## **License**
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+Distributed under the MIT License. See [`LICENSE`](https://github.com/EatingBizkuits/word-Game/blob/main/LICENSE) for more information.
 
-<p align="right">(<a href="#top">back to top</a>)</p> -->
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-<!-- no license yet -->
 
 <!-- CONTACT -->
 ## **Contact**

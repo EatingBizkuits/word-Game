@@ -49,7 +49,7 @@
 .underline {
     position: absolute;
     background-color: red;
-    height: 0.7vh;
+    height: 0.5vh;
     top: 6.5vh;
     border-radius: 20px;
 }
@@ -60,6 +60,15 @@
 
 .in-animate {
     animation: expand-left 0.7s;
+}
+
+.clickbox {
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 25px;
+}
+
+.closebox {
+    animation: bg-fade-out 1s forwards;
 }
 
 /* Navigation CSS End */
@@ -143,6 +152,104 @@
 .shrink {
     animation: scale-in 2s forwards;
 }
+/* borderbox ends */
+
+/* scoreboard */
+.scoreboard, .start-container {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 2;
+}
+
+.score-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    width: 50vh;
+    height: 70vh;
+    background-color: rgb(233, 233, 233);
+    border: solid 0.6vh black;
+    border-radius: 2vh;
+    margin: auto;
+    margin-top: 20vh;
+    font-size: 3vh;
+}
+
+.score-text {
+    margin-top: 3vh;
+}
+
+.score-line {
+    display: flex;
+    height: 0.8vh;
+    width: 60%;
+    background-color: black;
+    margin-top: 2vh;
+    border-radius: 25px;
+}
+
+.leave {
+    background-color: rgb(215, 255, 155);
+    padding: 1vh;
+    border-radius: 20px;
+    border: 0.3vh solid black;
+}
+
+.score {
+    margin-top: 9vh;
+}
+
+.down-anim {
+    animation: down-anim 1s forwards;
+}
+
+.fade-out {
+    animation: fade-out 1s forwards;
+}
+/* scoreboard end */
+
+/* start menu */
+.start-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 3;
+}
+
+.start-menu {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    width: 80vh;
+    height: 60vh;
+    background-color: rgb(200, 200, 200);
+    border: solid 0.6vh black;
+    border-radius: 2vh;
+    margin: auto;
+    margin-top: 25vh;
+    font-size: 3vh;
+}
+
+.start-text {
+    font-size: 5vh;
+    margin: 3vh auto 0 auto;
+}
+
+.start-text span {
+    animation: color-move 10s infinite;
+    border-left: 4px solid black;
+    border-right: 4px solid black;
+    border-radius: 20%;
+    padding: 0.5vh;
+    margin: 0.7vh;
+}
+
+/* start menu end */
 
 /* animations */
 
@@ -161,12 +268,18 @@
         opacity: 1;
     }
 
-    90% {
-        opacity: 0.1;
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes bg-fade-out {
+    0% {
+        background-color: rgba(0, 0, 0, 0.4);
     }
 
     100% {
-        opacity: 0;
+        background-color: rgba(0, 0, 0, 0)
     }
 }
 
@@ -207,5 +320,43 @@
 
     100% {
         transform: scale(1)
+    }
+}
+
+@keyframes down-anim {
+    0% {
+        opacity: 0.7;
+        transform: translateY(2vh);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes color-move{
+    0% {
+        color: #fff;
+    }
+
+    20% {
+        color: yellow;
+    }
+
+    40% {
+        color: blue;
+    }
+
+    60% {
+        color: green;
+    }
+
+    80% {
+        color: red;
+    }
+
+    100% {
+        color: #fff;
     }
 }
