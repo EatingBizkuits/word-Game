@@ -9,7 +9,7 @@
     <!-- <img src="" alt="Logo" width="80" height="80"> -->
   </a>
 
-<h3 align="center">Amazing Race 2022 - Word Game!</h3>
+<a href="https://eatingbizkuits.github.io/word-Game/"><h3 align="center"><b>Amazing Race 2022 - Word Game! (Click me to Play)<b></h3></a>
 
   <p align="center">
     A Mini Game | Merger of Last Word Game and Bingo!
