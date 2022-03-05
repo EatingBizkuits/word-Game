@@ -159,7 +159,8 @@ When an item is checkmarked, it means that the function is working, however ther
     &#9745; Randomizing of words within outer sector<br>
     &#9744; Score Calculations at the end<br>
     &#9744; Drawing of a line when a "Bingo" is met within inner sector (optional)<br>
-    &#9744; Drawing of a line when a "Bingo" is met within outer sector (optional)<br></ul>
+    &#9744; Drawing of a line when a "Bingo" is met within outer sector (optional)<br>
+    &#9745; Border Box Expanding when surrounding is revealed<br></ul>
 <br>
 
 <h3><b>Miscellaneous 📦</b></h3>
@@ -167,7 +168,7 @@ When an item is checkmarked, it means that the function is working, however ther
 <br>  
 
 <h3><b>Bugs 🪲</b></h3>
-    <ul>&#9744; As long as 16 grids are checked, no matter inner or outer, outer does not disappear<br></ul>
+    <ul>&#9745; As long as 16 grids are checked, no matter inner or outer, outer does not disappear<br></ul>
 <br>
 
 See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
