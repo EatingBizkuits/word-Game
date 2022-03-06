@@ -13,7 +13,7 @@ const words = {
 
 $(document).ready(function() {
     answerInit();
-    
+    // forTesting(); // applies click to all boxes
     // handle click grid
     $(document).on("click", ".gridbox", function(){  // click
         if (!($(this).hasClass("outer"))) {
@@ -51,10 +51,17 @@ $(document).ready(function() {
             $(".scoreboard").addClass("bar");
             location.reload();
         } else if (choice === "scores") {
-            let clearedAmt = $(".clicked").length
+            let clearedAmt = 0;
+            if (outer) {  // if outer is hidden
+                clearedAmt = $(".clicked:not('.outer'):not('.outed')").length
+            } else {
+                clearedAmt = $(".clicked").length
+            }
+            
             $(".score-clicked").empty().append(clearedAmt);
             $(".scoreboard").removeClass("bar").removeClass("fade-out");
             $(".score-container").addClass("down-anim");
+            checkBingos();
         }
 
     });
@@ -69,6 +76,11 @@ $(document).ready(function() {
 
 });
 
+
+function forTesting() { // applies "click to all tiles"
+    $(".gridbox").addClass("clicked");
+    NumberOfChecked();
+}
 
 function answerInit(){
     //determine answers (upon print)
@@ -141,4 +153,37 @@ function removeItemInArray(array, toRemove){
         }
     }
     return newArray;
+}
+
+function checkBingos(){
+    const iOList = [
+        [$(".C1"), $(".C2"), $(".C3"), $(".C4"), $(".R1"), 
+        $(".R2"), $(".R3"), $(".R4"), $(".D1"), $(".D2")], 
+        [$(".OO1"), $(".OO2"), $(".OO3"), $(".OO4"), $(".OC1"), 
+        $(".OC2"), $(".OC3"), $(".OC4"), $(".OR1"), $(".OR2"), 
+        $(".OR3"), $(".OR4"), $(".OD1"), $(".OD2")]];
+    
+    let bingoAmt = 0;
+    let checkLength = 4;  // increase to 6 when checking on outer
+    
+
+    for (let iOSelector = 0; iOSelector < iOList.length; iOSelector++) {  
+        for (let p = 0; p < iOList[iOSelector].length; p++) {
+            let clickedArray = [];
+            for (let i = 0; i < iOList[iOSelector][p].length; i++) {
+                if ($(iOList[iOSelector][p][i]).hasClass("clicked")) {
+                    clickedArray.push($(iOList[iOSelector][p][i]));
+                }
+            }
+            
+            if (clickedArray.length == checkLength) {
+                if ((checkLength == 6 && !outer) || (checkLength == 4)) {
+                    bingoAmt += 1;
+                }    
+            }
+        }
+        checkLength += 2  
+    }
+    console.log(bingoAmt);
+    $("span.score-bingo").empty().html(bingoAmt);
 }

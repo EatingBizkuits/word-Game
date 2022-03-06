@@ -149,7 +149,8 @@ When an item is checkmarked, it means that the function is working, however ther
 <h3><b>Interface 🖥️</b></h3>
     <ul>&#9744; Round Selection (Rounds 1 - 5)<br>
     &#9745; Clicking of Boxes on Screen to mark called word<br>
-    &#9745; Display of Final Points and Boxes | Partial Completion<br></ul>
+    &#9745; Display of Final Points and Boxes (Bingo + Clicked)<br> 
+    &#9745; Border Box Expanding when surrounding is revealed<br></ul>
 <br>
 
 <h3><b>Function ⚙️</b></h3>
@@ -159,8 +160,10 @@ When an item is checkmarked, it means that the function is working, however ther
     &#9745; Randomizing of words within outer sector<br>
     &#9745; Score Calculations at the end<br>
     &#9744; Drawing of a line when a "Bingo" is met within inner sector (optional)<br>
-    &#9744; Drawing of a line when a "Bingo" is met within outer sector (optional)<br>
-    &#9745; Border Box Expanding when surrounding is revealed<br></ul>
+    &#9744; Drawing of a line when a "Bingo" is met within outer sector (optional)<br> 
+    &#9745; Clear outer Selection(s)<br>
+    </ul>
+
 <br>
 
 <h3><b>Miscellaneous 📦</b></h3>
