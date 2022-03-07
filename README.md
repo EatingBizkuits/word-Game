@@ -169,7 +169,7 @@ When an item is checkmarked, it means that the function is working, however ther
 <br>
 
 <h3><b>Miscellaneous 📦</b></h3>
-    <ul>&#9744; Baking new Bizkuits<br></ul>
+    <ul>&#9744; Baking new Bizkuits 🍪<br></ul>
 <br>  
 
 <h3><b>Bugs 🪲</b></h3>
