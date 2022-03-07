@@ -147,14 +147,15 @@ When an item is checkmarked, it means that the function is working, however ther
 
 <br>
 <h3><b>Interface 🖥️</b></h3>
-    <ul>&#9744; Round Selection (Rounds 1 - 5)<br>
+    <ul>&#9745; Round Selection (Rounds 1 - 5)<br>
     &#9745; Clicking of Boxes on Screen to mark called word<br>
     &#9745; Display of Final Points and Boxes (Bingo + Clicked)<br> 
-    &#9745; Border Box Expanding when surrounding is revealed<br></ul>
+    &#9745; Border Box Expanding when surrounding is revealed<br>
+    &#9744; Change Background for final</ul>
 <br>
 
 <h3><b>Function ⚙️</b></h3>
-    <ul>&#9744; Creation of click confirmation<br>
+    <ul>&#9744; Creation of click confirmation | Cancelled<br>
     &#9745; Revealing of outer layer of Bingo Sheet - <b>BUGGED</b> <br>
     &#9745; Randomizing of Words within inner sector<br>
     &#9745; Randomizing of words within outer sector<br>
@@ -162,6 +163,7 @@ When an item is checkmarked, it means that the function is working, however ther
     &#9744; Drawing of a line when a "Bingo" is met within inner sector (optional)<br>
     &#9744; Drawing of a line when a "Bingo" is met within outer sector (optional)<br> 
     &#9745; Clear outer Selection(s)<br>
+    &#9744; Create a "Random Words" Mode (Optional)<br>
     </ul>
 
 <br>
@@ -171,7 +173,9 @@ When an item is checkmarked, it means that the function is working, however ther
 <br>  
 
 <h3><b>Bugs 🪲</b></h3>
-    <ul>&#9745; As long as 16 grids are checked, no matter inner or outer, outer does not disappear<br></ul>
+    <ul>&#9745; As long as 16 grids are checked, no matter inner or outer, outer does not disappear<br>
+    &#9745; Words randomly change on "newgame"<br>
+    &#9745; Rhinoceros Appears in Local Delights Theme<br></ul>
 <br>
 
 See the [open issues](https://github.com/EatingBizkuits/word-Game/issues) for a full list of proposed features (and known issues).

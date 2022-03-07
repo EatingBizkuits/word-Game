@@ -1,25 +1,48 @@
 let outer = true; // outer border hidden applied
-let allowHover = true;
+let allowHover = false;
 
 const words = {
     "round1": [
-        ["Elephant", "Giraffe", "Zebra", "Antelope", "Koala", "Tiger", "Monkey", "Penguin", "Reindeer", "Panda", "Dog", "Rhinoceros", "Peacock", "Cow", "Chameleon", "Quokka"],
+        ["Elephant", "Giraffe", "Zebra", "Antelope", "Koala", "Tiger", "Monkey", "Penguin", "Reindeer", "Panda", "Dog", "Rhinoceros", "Peacock", "Cow", "Chameleon", "Meerkat"],
         ["Camel", "Dolphin", "Hippo-<br>potamus", "Flamingo", "Porcupine", "Goat", "Wolf", "Chicken", "Turtle", "Sloth", "Llama", "Tortoise", "Frog", "Fox", "Cheetah", "Owl", "Gorilla", "Bat", "Squirrel", "Orangutan"]
-    ],
+    ],  // quokka cannot be done, there is no word ending with q (resolved)
     "round2": [
-
+        ["Taylor<br>Swift", "Mark<br>Ruffalo", "Cardi B", "Harry<br>Styles", "Zendaya", "Tom<br>Holland", "Dua Lipa", "Ed<br>Sheeran", "Doja Cat", "BTS", "Ariana<br>Grande", "Conan<br>Gray", "Coldplay", "Justin<br>Bieber", "Chris<br>Evans", "Jeremy<br>Renner"],
+        ["Camila<br>Cabello", "Lauv", "Angelina<br>Jolie", "Emma<br>Stone", "Will<br>Smith", "Jackie<br>Chan", "Drake", "Ava Max", "Bebe<br>Rexha", "Shawn<br>Medes", "Charlie<br>Puth", "Adele", "Olivia<br>Rodrigo", "Bille<br>Eilish", "Paul<br>Rudd", "The<br>Weeknd", "Rihanna", "Big Bang", "Ryan<br>Reynolds", "Black<br>Pink"]
+    ],
+    "round3": [
+        ["Straw-<br>berry", "Cherry", "Banana", "Apple", "Pineapple", "Orange", "Pear", "Durian", "Peach", "Water-<br>melon", "Jack-<br>fruit", "Grapes", "Soursop", "Apricot", "Rasp-<br>berry", "Pomegr-<br>anate"],
+        ["Guava", "Kiwi", "Blue-<br>berry", "Rambu-<br>tan", "Plum", "Dragon-<br>fruit", "Honey-<br>dew", "Coconut", "Fig", "Star-<br>fruit", "Avocado", "Mango", "Lemon", "Longan", "Black-<br>berry", "Grape-<br>fruit", "Mango-<br>steen", "Lychee", "Papaya", "Rock-<br>melon"]
+    ],
+    "round4": [
+        ["Chicken<br>Rice", "Laksa", "Prawn<br>Noodle", "Chili<br>Crab", "BBQ<br>Stingray", "Bak Kut<br>Teh", "Kaya<br>Toast", "Nasi<br>Lemak", "Oyster<br>Omelette", "Teh<br>Tarik", "Roti<br>Prata", "Kway<br>Chap", "Popiah", "Chendol", "Mee Pok", "Mee<br>Rebus"],
+        ["Char Kway<br>Teow", "Bandung", "Kopi", "Charsiew<br>Rice", "Satay", "Fish Head<br>Curry", "Nasi<br>Goreng", "Mee Soto", "Mee<br>Goreng", "Milo", "Satay<br>Bee Hoon", "Tutu<br>Kueh", "Rojak", "Lor Mee", "Goreng<br>Pisang", "Mee Siam", "Ice<br>Kachang", "Curry<br>Puff", "Ban Mian", "Otak<br>Otak"]
+    ],  // to change rhino
+    "round5": [
+        ["Data<br>Science", "Tech<br>logy", "Cookies", "Infomation<br>Technology", "Breach", "Domain", "Software", "Cyber<br>Security", "Firewall", "Immersive<br>Media", "VPN", "IP<br>Address", "Big Data", "Deepfake", "Algorithms", "Augmented<br>Reality"],
+        ["Virtual<br>Reality", "Predictive<br>Analysis", "Internet", "Extreme<br>Reality", "Coding", "Phishing", "Javascript", "Cloud", "Stitching", "Metadata", "Data<br>Mining", "Ransom-<br>ware", "Virus", "Outlier", "Cache", "Band<br>width", "Database", "Malware", "Python", "Statistics"]
     ]
 }
 
 $(document).ready(function() {
-    answerInit();
+    $(".choices").width($(".start-text").width()); // gives option choices a width
+
     // forTesting(); // applies click to all boxes
+    
     // handle click grid
     $(document).on("click", ".gridbox", function(){  // click
         if (!($(this).hasClass("outer"))) {
             $(this).addClass("clicked");
         }
         NumberOfChecked()
+    });
+
+    $(document).on("click", ".choices p", function() { // for options (menu)
+        allowHover = true;
+        
+        let ChoiceText = $(this).html()[$(this).html().length - 1]
+        
+        answerInit(ChoiceText);
     });
 
     $(document).on("click", ".gridbox.clicked", function(){  // unclick
@@ -47,10 +70,9 @@ $(document).ready(function() {
         if (choice === "clear") {  // clear outer clicked status
             $(".outer").removeClass("clicked");
             $(".outed").removeClass("clicked");
-        } else if (choice === "newGame") {
-            $(".scoreboard").addClass("bar");
+        } else if (choice === "newGame") { // new game session
             location.reload();
-        } else if (choice === "scores") {
+        } else if (choice === "scores") {  // show scores
             let clearedAmt = 0;
             if (outer) {  // if outer is hidden
                 clearedAmt = $(".clicked:not('.outer'):not('.outed')").length
@@ -82,14 +104,15 @@ function forTesting() { // applies "click to all tiles"
     NumberOfChecked();
 }
 
-function answerInit(){
+function answerInit(choiceText){
     //determine answers (upon print)
     //words["round1"][0] => inner
-    let textchosen = "round1"
+    let textchosen = "round" + String(choiceText)
 
     for (let listCounter = 0; listCounter < words[textchosen].length; listCounter++) {
         //runs inner and outer subsequently
         let selectedList = words[textchosen][listCounter];
+        console.log(selectedList);
         const Boxes = [$(".gridbox:not('.outer')"), $(".gridbox.outer")]
         //innner is 0, outer is 1
         for (let wordCounter = 0; selectedList.length > 0; wordCounter++) {
@@ -98,11 +121,17 @@ function answerInit(){
 
             $(Boxes[listCounter][wordCounter]).html(chosenText);
             // edits the inner html of the selected box
+            console.log(chosenText);
 
             selectedList = removeItemInArray(selectedList, chosenText);
             //remove word from list and replace current list with new list (prevent dups)
         }
     }
+    $(".start-container").addClass("fade-out");
+    $(".start-menu").removeClass("down-anim");
+    window.setTimeout(function() {
+        $(".start-container").addClass("bar");
+    }, 800);
 }
 
 

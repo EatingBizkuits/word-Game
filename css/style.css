@@ -206,11 +206,11 @@
 }
 
 .down-anim {
-    animation: down-anim 1s forwards;
+    animation: down-anim 2s forwards;
 }
 
 .fade-out {
-    animation: fade-out 1s forwards;
+    animation: fade-out 2s forwards;
 }
 /* scoreboard end */
 
@@ -237,16 +237,31 @@
 
 .start-text {
     font-size: 5vh;
-    margin: 3vh auto 0 auto;
+    margin: 7vh auto 0 auto;
 }
 
 .start-text span {
-    animation: color-move 10s infinite;
+    animation: color-move 15s infinite;
     border-left: 4px solid black;
     border-right: 4px solid black;
     border-radius: 20%;
     padding: 0.5vh;
     margin: 0.7vh;
+}
+
+.choices {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 12vh;
+}
+
+.choices>p{
+    margin: 2vh;
+    border: 2px black solid;
+    border-radius: 10px;
+    padding: 2vh;
+    background-color: lightblue;
 }
 
 /* start menu end */
@@ -335,17 +350,17 @@
     }
 }
 
-@keyframes color-move{
+@keyframes color-move-1{
     0% {
         color: #fff;
     }
 
     20% {
-        color: yellow;
+        color: lightgoldenrodyellow;
     }
 
     40% {
-        color: blue;
+        color: lightcoral;
     }
 
     60% {
@@ -353,7 +368,45 @@
     }
 
     80% {
-        color: red;
+        color: rgb(101, 4, 139);
+    }
+
+    100% {
+        color: #fff;
+    }
+}
+
+@keyframes color-move{
+    0% {
+        color: #fff;
+    }
+
+    15% {
+        color: lightgoldenrodyellow;
+    }
+
+    30% {
+        color: lightcoral;
+    }
+
+    45% {
+        color: green;
+    }
+
+    50% {
+        color: rgb(101, 4, 139);
+    }
+
+    65% {
+        color: green;
+    }
+
+    80% {
+        color: lightcoral;
+    }
+
+    95% {
+        color: lightgoldenrodyellow;
     }
 
     100% {
