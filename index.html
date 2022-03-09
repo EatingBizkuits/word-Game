@@ -12,6 +12,12 @@
     <div class="bg">
         <div class="nav">
             <div class="title">WordGame</div>
+            <div class="count-circle">
+                <div class="remove counter"></div>
+                <div class="score-points">0</div>
+                <div class="add counter"></div>
+            </div>
+                
             <ul class="options">
                 <li id="newGame">New Game
                     <div class='bar underline'></div>
@@ -24,6 +30,7 @@
                 </li>
             </ul>
         </div>
+
         <div class="container">
             <div class="grid-container">
                 <div class="OD1 OO1 OO3 gridbox outer"></div>
@@ -81,6 +88,7 @@
                 <div class="score-line"></div>
                 <div class="score">Cleared Tiles: <span class="score-clicked">0</span></div>
                 <div class="score">Bingo'd Rows: <span class="score-bingo">0</span></div>
+                <div class="score">No. Words Used: <span class="score-words">0</span></div>
                 <div class="score leave">Back to Game</div>
             </div>
         </div>
@@ -96,6 +104,9 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="bingo-lines-container">
+        <div class="line short "></div>
     </div>
 </body>
 <script rel="stylesheet" type="text/javascript" src="./scripts/script.js"></script>

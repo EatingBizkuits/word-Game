@@ -1,5 +1,8 @@
 let outer = true; // outer border hidden applied
 let allowHover = false;
+let wordCounted_ = 0;
+let wordCounterStatus = false;
+let timerSet = 0;
 
 const words = {
     "round1": [
@@ -25,56 +28,64 @@ const words = {
 }
 
 $(document).ready(function() {
-    $(".choices").width($(".start-text").width()); // gives option choices a width
-
-    // forTesting(); // applies click to all boxes
+    onceReady();
     
-    // handle click grid
-    $(document).on("click", ".gridbox", function(){  // click
-        if (!($(this).hasClass("outer"))) {
-            $(this).addClass("clicked");
-        }
-        NumberOfChecked()
-    });
-
-    $(document).on("click", ".choices p", function() { // for options (menu)
+    $(document).on("click", ".choices p", function() { 
+        // main menu
         allowHover = true;
         
         let ChoiceText = $(this).html()[$(this).html().length - 1]
         
         answerInit(ChoiceText);
+        wordCounterStatus = true;
     });
-
-    $(document).on("click", ".gridbox.clicked", function(){  // unclick
-        $(this).removeClass("clicked");
-        NumberOfChecked()
-    });
+    
+    // handle click grid
+    $(document).on("click", ".gridbox", function(){  
+        // click gridbox
+        if (!($(this).hasClass("outer"))) {
+            $(this).addClass("clicked");
+        }
+        NumberOfChecked();
+        checkBingos();
+    }).on("click", ".gridbox.clicked", function(){  
+        // unclick gridbox
+            $(this).removeClass("clicked");
+            NumberOfChecked();
+            checkBingos();
+        });
     // handle click grid end
 
-    // handle hover highlight
+    // handle navbar hover highlight
     $(".options li").mouseover(function() {  // hover
         if (allowHover) {
             let parentwidth = $(this).width();      
             $(".underline").width(parentwidth);  
             $(this).children().removeClass("bar").addClass("in-animate");
         }
-    });
-
-    $(".options li").mouseout(function() {  // hover off
+    }).mouseout(function() {  // hover off
         $(this).children().addClass("bar").removeClass("in-animate");
     });  
-    // handle hover highlight end
+    // handle navbar hover highlight end
     
-    $(document).on("click", ".options li", function() {
+    // handle navbar
+    $(document).on("click", ".options li", function() { 
+        //nav options
+        wordCounterStatus = false;
         let choice = $(this).attr('id');
-        if (choice === "clear") {  // clear outer clicked status
+        if (choice === "clear") {  
+            // clear outer clicked status
             $(".outer").removeClass("clicked");
             $(".outed").removeClass("clicked");
-        } else if (choice === "newGame") { // new game session
+            wordCounterStatus = true;
+        } else if (choice === "newGame") { 
+            // new game session
             location.reload();
-        } else if (choice === "scores") {  // show scores
+        } else if (choice === "scores") {  
+            // show scores
             let clearedAmt = 0;
-            if (outer) {  // if outer is hidden
+            if (outer) {  
+                // if outer is hidden
                 clearedAmt = $(".clicked:not('.outer'):not('.outed')").length
             } else {
                 clearedAmt = $(".clicked").length
@@ -85,23 +96,92 @@ $(document).ready(function() {
             $(".score-container").addClass("down-anim");
             checkBingos();
         }
-
-    });
-
-    $(document).on("click", ".score.leave", function(){
+    }).on("click", ".score.leave", function(){ 
+        //leave scoreboard
         $(".scoreboard").addClass("fade-out");
         $(".score-container").removeClass("down-anim");
+        wordCounterStatus = true;
         window.setTimeout(function(){
             $(".scoreboard").addClass("bar")
+            wordCounterStatus = true;
         }, 800)
+    })
+    // handle navbar end
+    
+    //handles word counter
+    $(document).on("click", ".counter", function() {
+        //handles word counter by click
+        if (wordCounterStatus) {
+            let className = $(this).attr("class");
+            if (className == "add counter") { 
+                //handles word add
+                wordCounted_ += 1;
+                wordCounter();
+            } else if (className == "remove counter" && wordCounted_ > 0){ 
+                //handles word remove (if zero)
+                wordCounted_ -= 1;
+                wordCounter();
+            } else { 
+                //handles word remove
+                wordCounted_ = 0;
+                wordCounter();
+            }
+        }
+
+        //handles word counter by keys
+    }).on("keyup", function(e){
+        if (wordCounterStatus) {
+            if(e.keyCode == 32){ 
+                // released space (add)
+                wordCounted_ += 1;
+                wordCounter();
+            } else if (e.keyCode == 8 && wordCounted_ > 0) { 
+                // released backspace (remove)
+                wordCounted_ -= 1;
+                wordCounter();
+            }
+            $(".score-points").css("background-color", "");
+        }
+    }).on("keydown", function(e){
+        if (wordCounterStatus) {
+            // just looks nice, keypress interactions
+            if(e.keyCode == 32) {
+                $(".score-points").css("background-color", "lightgreen");
+            } else if (e.keyCode == 8) {
+                $(".score-points").css("background-color", "lightcoral");
+            }
+        }
     });
 
+    // handles reset
+    $(".score-points").on('mousedown', function() {
+        timerSet = setTimeout(function(){
+            $(".score-points").css("background-color", "lightcoral");
+            wordCounted_ = 0;
+            setTimeout(function(){
+                $(".score-points").css("background-color", "");
+            }, 100);
+            wordCounter();
+        }, 800);
+    }).on('mouseup mouseleave', function() {
+        clearTimeout(timerSet);
+    });
+
+    //handles word counter end
 });
 
 
-function forTesting() { // applies "click to all tiles"
+function forTesting() { 
+    // applies "click to all tiles"
     $(".gridbox").addClass("clicked");
     NumberOfChecked();
+}
+
+function onceReady() {
+    $(".choices").width($(".start-text").width()); 
+    // gives option choices a width
+    $(".short").width($(".gridbox").width() * 4 + (1.5 * 3))
+    wordCounter(); 
 }
 
 function answerInit(choiceText){
@@ -184,6 +264,7 @@ function removeItemInArray(array, toRemove){
     return newArray;
 }
 
+
 function checkBingos(){
     const iOList = [
         [$(".C1"), $(".C2"), $(".C3"), $(".C4"), $(".R1"), 
@@ -194,10 +275,11 @@ function checkBingos(){
     
     let bingoAmt = 0;
     let checkLength = 4;  // increase to 6 when checking on outer
-    
+    let selectedType = [];
 
     for (let iOSelector = 0; iOSelector < iOList.length; iOSelector++) {  
         for (let p = 0; p < iOList[iOSelector].length; p++) {
+            selectedType = [iOSelector, p];
             let clickedArray = [];
             for (let i = 0; i < iOList[iOSelector][p].length; i++) {
                 if ($(iOList[iOSelector][p][i]).hasClass("clicked")) {
@@ -213,6 +295,11 @@ function checkBingos(){
         }
         checkLength += 2  
     }
-    console.log(bingoAmt);
     $("span.score-bingo").empty().html(bingoAmt);
+}
+
+
+ function wordCounter(){
+    $(".score-points").empty().html(String(wordCounted_));
+    $(".score-words").empty().html(String(wordCounted_));
 }

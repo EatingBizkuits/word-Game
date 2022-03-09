@@ -151,19 +151,22 @@ When an item is checkmarked, it means that the function is working, however ther
     &#9745; Clicking of Boxes on Screen to mark called word<br>
     &#9745; Display of Final Points and Boxes (Bingo + Clicked)<br> 
     &#9745; Border Box Expanding when surrounding is revealed<br>
-    &#9744; Change Background for final</ul>
+    &#9744; Change Background for final
+    &#9745; "Word counter"<br></ul>
+    
 <br>
 
 <h3><b>Function ⚙️</b></h3>
-    <ul>&#9744; Creation of click confirmation | Cancelled<br>
+    <ul>&#9746; ~~Creation of click confirmation~~ | Cancelled<br>
     &#9745; Revealing of outer layer of Bingo Sheet - <b>BUGGED</b> <br>
     &#9745; Randomizing of Words within inner sector<br>
     &#9745; Randomizing of words within outer sector<br>
     &#9745; Score Calculations at the end<br>
-    &#9744; Drawing of a line when a "Bingo" is met within inner sector (optional)<br>
-    &#9744; Drawing of a line when a "Bingo" is met within outer sector (optional)<br> 
+    &#9744; ~~ Drawing of a line when a "Bingo" is met within inner sector (optional) ~~ | Cancelled<br>
+    &#9746; ~~ Drawing of a line when a "Bingo" is met within outer sector (optional) ~~ | Cancelled<br> 
     &#9745; Clear outer Selection(s)<br>
     &#9744; Create a "Random Words" Mode (Optional)<br>
+    &#9745; Disable "word counter" on score mode<br>
     </ul>
 
 <br>
