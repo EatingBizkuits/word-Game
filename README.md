@@ -167,6 +167,7 @@ When an item is checkmarked, it means that the function is working, however ther
     &#9745; Clear outer Selection(s)<br>
     &#9744; Create a "Random Words" Mode (Optional)<br>
     &#9745; Disable "word counter" on score mode<br>
+    &#9745; Press and Hold to reset counter<br>
     </ul>
 
 <br>
