@@ -115,7 +115,7 @@ With the progress of the event nearing, we have been making improvements 👍 an
 
 <ul style="margin-top: 2vh; list-style-type: none"> 
   <li>
-    Click on the link at the top of the readme file to get to the webpage. Alternatively, you can use [https://eatingbizkuits.github.io/word-Game/](https://eatingbizkuits.github.io/word-Game/) to get to the game page! 
+    Click on the link at the top of the readme file to get to the webpage. Alternatively, you can use [https://eatingbizkuits.github.io/word-Game/] (https://eatingbizkuits.github.io/word-Game/) to get to the game page! 
   </li>
 </ul>
 
